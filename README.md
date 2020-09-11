@@ -8,7 +8,7 @@
 ## Introduction
 Dotfiles are usually hidden config files that are easily transportable and sharable between installations of *nix operating systems.
 
-Mines are a collection of little things everywhere that make up a fully fledged and development oriented AwesomeWM setup.
+Mine are a collection of little things everywhere that make up a fully fledged and development oriented AwesomeWM setup.
 
 (Heavily inspired by [elenapan's awesome setup](https://github.com/elenapan/dotfiles), with added functionalities to my convenience)
 
