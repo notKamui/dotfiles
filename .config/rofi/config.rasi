@@ -1,0 +1,15 @@
+configuration {
+  modi: "drun,window";
+  combi-modi: [drun,window];
+
+  font: "Raleway 25";
+
+  lines: 9;
+
+  show-icons: true;
+  icon-theme: "Papirus";
+
+  theme: "slate";
+}
+
+/* vim:ft=css
