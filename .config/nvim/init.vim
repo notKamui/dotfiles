@@ -86,12 +86,15 @@ imap <C-S> <esc>:w<cr>
 " Save + back into insert
 " imap <C-S> <esc>:w<cr>a
 
-" Control-C Copy in visual mode
-vmap <C-C> y
+" Control-S System Cut in visual mode
+vmap <C-X> "+d
 
-" Control-V Paste in insert and command mode
-imap <C-V> <esc>pa
-cmap <C-V> <C-r>0
+" Control-C System Copy in visual mode
+vmap <C-C> "+y
+
+" Control-V System Paste in insert and command mode
+imap <C-V> <esc>"+P
+cmap <C-V> "+P
 
 " Window Movement
 nmap <M-h> <C-w>h
