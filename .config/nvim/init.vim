@@ -1,5 +1,7 @@
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rakr/vim-one'
@@ -279,6 +281,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
+
+" Goyo + Limelight
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+map <M-z> :Goyo<CR>
 
 " Colorscheme
 if (empty($TMUX))
