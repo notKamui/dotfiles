@@ -25,8 +25,11 @@ call plug#end()
 " Highlight the line on which the cursor lives.
 set nocursorline
 
-" Disable autocomment 
+" Disable autocomment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Auto delete all trailing whitespace characters on save
+autocmd BufWritePre * %s/\s\+$//e
 
 " Always show at least one line above/below the cursor.
 set scrolloff=1
