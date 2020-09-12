@@ -25,8 +25,12 @@ call plug#end()
 " Highlight the line on which the cursor lives.
 set nocursorline
 
+" Disable autocomment 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " Always show at least one line above/below the cursor.
 set scrolloff=1
+
 " Always show at least one line left/right of the cursor.
 set sidescrolloff=5
 
@@ -118,11 +122,6 @@ imap <M-l> <right>
 imap <M-f> <C-right>
 imap <M-b> <C-left>
 
-" Spacemacs-like keybinds
-" Change <leader> bind from default \
-" nnoremap <space> <nop>
-" let mapleader=" "
-
 " Make ci( work like quotes do
 function! New_cib()
     if search("(","bn") == line(".")
@@ -185,8 +184,8 @@ set shiftwidth=4
 
 "set smartindent
 set autoindent
-"set cindent
 
+"set cindent
 set nocompatible
 filetype plugin indent on
 
