@@ -14,6 +14,7 @@ Plug 'nelstrom/vim-markdown-folding'
 Plug 'frazrepo/vim-rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
+Plug 'udalov/kotlin-vim'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
             \ Plug 'ryanoasis/vim-devicons'
