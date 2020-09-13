@@ -25,7 +25,7 @@ soon<sup>tm</sup>
 ### Step 1: make the magic alias
 The goal is to create and get an alias for a bare git repo. The alias to access it is `dotfiles` instead of plain `git`. It avoids conflict with other git repos in your ~/ folder.
 ```
-echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'" >> $HOME/.zshrc
+echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'" >> $HOME/.zshrc
 ```
 Don't forget to launch a new shell to update the modifications.
 

@@ -17,6 +17,7 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 Plug 'udalov/kotlin-vim'
+Plug 'RRethy/vim-hexokinase'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
             \ Plug 'ryanoasis/vim-devicons'
@@ -276,6 +277,9 @@ let g:airline_powerline_fonts = 1
 
 " Vim Rainbow
 let g:rainbow_active = 1
+
+" Hexokinase
+let g:Hexokinase_highlighters = ['backgroundfull']
 
 " NerdTree
 autocmd StdinReadPre * let s:std_in=1
