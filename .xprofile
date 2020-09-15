@@ -5,3 +5,4 @@ xrdb -merge ~/.cache/wal/colors.Xresources
 xrdb -load ~/.Xresources
 setxkbmap fr
 picom --config ~/.config/picom/picom.conf &
+nm-applet &
