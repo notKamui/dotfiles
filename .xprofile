@@ -6,3 +6,4 @@ xrdb -load ~/.Xresources
 setxkbmap fr
 picom --config ~/.config/picom/picom.conf &
 nm-applet &
+jetbrains-toolbox &
