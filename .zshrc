@@ -148,7 +148,7 @@ alias netprocs="lsof -P -i -n"
 alias init.vim="nvim ~/.config/nvim/init.vim"
 
 # Quick edit
-alias subl="subl3"
+# alias subl="subl3"
 alias xr="nvim ~/.Xresources"
 alias xrc="nvim ~/.wally/Xresources-clean"
 alias zshrc="nvim ~/.zshrc"
