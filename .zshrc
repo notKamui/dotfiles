@@ -187,3 +187,4 @@ alias yeet="rm -rf"
 alias p10kupd="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias upduni='cd ~/Documents/Uni && git add -A && git commit -a -m "Updated" && git push'
