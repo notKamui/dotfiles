@@ -386,6 +386,7 @@ awful.rules.rules = {
                 "riotclientux.exe",
                 "leagueclientux.exe",
                 "Devtools", -- Firefox devtools
+                "mupdf",
             },
             class = {
                 "Gpick",
@@ -394,6 +395,7 @@ awful.rules.rules = {
                 "File-roller",
                 "fst",
                 "Nvidia-settings",
+                "mupdf",
             },
             name = {
                 "Event Tester",  -- xev
@@ -468,11 +470,13 @@ awful.rules.rules = {
                 "music",
                 "markdown_input",
                 "scratchpad",
+                "mupdf",
             },
             instance = {
                 "music",
                 "markdown_input",
                 "scratchpad",
+                "mupdf",
             },
             role = {
                 "GtkFileChooserDialog",
@@ -486,21 +490,15 @@ awful.rules.rules = {
     {
         rule_any = {
             instance = {
-                "install league of legends (riot client live).exe",
-                "gw2-64.exe",
-                "battle.net.exe",
-                "riotclientservices.exe",
-                "leagueclientux.exe",
-                "riotclientux.exe",
-                "leagueclient.exe",
                 "^editor$",
-                "markdown_input"
+                "markdown_input",
+                "mupdf",
             },
             class = {
                 "qutebrowser",
                 "Sublime_text",
                 "Subl3",
-                --"discord",
+                "discord",
                 --"TelegramDesktop",
                 "firefox",
                 "Nightly",
@@ -508,8 +506,9 @@ awful.rules.rules = {
                 "Lutris",
                 "Chromium",
                 "^editor$",
-                "markdown_input"
+                "markdown_input",
                 -- "Thunderbird",
+                "mupdf",
             },
             type = {
               "splash"
@@ -619,7 +618,9 @@ awful.rules.rules = {
         rule_any = {
             class = {
                 "Nemo",
-                "Thunar"
+                "Thunar",
+                "dolphin",
+                "krusader",
             },
         },
         except_any = {
@@ -812,159 +813,9 @@ awful.rules.rules = {
         end
     },
 
-    -- League of Legends client QoL fixes
-    {
-        rule = { instance = "league of legends.exe" },
-        properties = {},
-        callback = function (c)
-            local matcher = function (c)
-                return awful.rules.match(c, { instance = "leagueclientux.exe" })
-            end
-            -- Minimize LoL client after game window opens
-            for c in awful.client.iterate(matcher) do
-                c.urgent = false
-                c.minimized = true
-            end
-
-            -- Unminimize LoL client after game window closes
-            c:connect_signal("unmanage", function()
-                for c in awful.client.iterate(matcher) do
-                    c.minimized = false
-                end
-            end)
-        end
-    },
-
     ---------------------------------------------
     -- Start application on specific workspace --
     ---------------------------------------------
-    -- Browsing
-    {
-        rule_any = {
-            class = {
-                "firefox",
-                "Nightly",
-                -- "qutebrowser",
-            },
-        },
-        except_any = {
-            role = { "GtkFileChooserDialog" },
-            instance = { "Toolkit" },
-            type = { "dialog" }
-        },
-        properties = { screen = 1, tag = awful.screen.focused().tags[1] },
-    },
-
-    -- Games
-    {
-        rule_any = {
-            class = {
-                "underlords",
-                "lt-love",
-                "portal2_linux",
-                "deadcells",
-                "csgo_linux64",
-                "EtG.x86_64",
-                "factorio",
-                "dota2",
-                "Terraria.bin.x86",
-                "dontstarve_steam",
-                "Wine",
-                "trove.exe"
-            },
-            instance = {
-                "love.exe",
-                "synthetik.exe",
-                "pathofexile_x64steam.exe",
-                "leagueclient.exe",
-                "glyphclientapp.exe"
-            },
-        },
-        properties = { screen = 1, tag = awful.screen.focused().tags[2] }
-    },
-
-    -- Chatting
-    {
-        rule_any = {
-            class = {
-                "Chromium",
-                "Chromium-browser",
-                "discord",
-                "TelegramDesktop",
-                "Signal",
-                "Slack",
-                "TeamSpeak 3",
-                "zoom",
-                "weechat",
-                "6cord",
-            },
-        },
-        properties = { screen = 1, tag = awful.screen.focused().tags[3] }
-    },
-
-    -- Editing
-    {
-        rule_any = {
-            class = {
-                "^editor$",
-                -- "Emacs",
-                -- "Subl3",
-            },
-        },
-        properties = { screen = 1, tag = awful.screen.focused().tags[4] }
-    },
-
-    -- System monitoring
-    {
-        rule_any = {
-            class = {
-                "htop",
-            },
-            instance = {
-                "htop",
-            },
-        },
-        properties = { screen = 1, tag = awful.screen.focused().tags[5] }
-    },
-
-    -- Image editing
-    {
-        rule_any = {
-            class = {
-                "Gimp",
-                "Inkscape",
-            },
-        },
-        properties = { screen = 1, tag = awful.screen.focused().tags[6] }
-    },
-
-    -- Mail
-    {
-        rule_any = {
-            class = {
-                "email",
-            },
-            instance = {
-                "email",
-            },
-        },
-        properties = { screen = 1, tag = awful.screen.focused().tags[7] }
-    },
-
-    -- Game clients/launchers
-    {
-        rule_any = {
-            class = {
-                "Steam",
-                "battle.net.exe",
-                "Lutris",
-            },
-            name = {
-                "Steam",
-            }
-        },
-        properties = { screen = 1, tag = awful.screen.focused().tags[8] }
-    },
 
     -- Miscellaneous
     -- All clients that I want out of my way when they are running
