@@ -36,6 +36,7 @@ local bar_themes = {
     "skyfall",      -- 3 -- Weather, taglist, window buttons, pop-up tray
     "ephemeral",    -- 4 -- Taglist, start button, tasklist, and more buttons
     "amarena",      -- 5 -- Minimal taglist and dock with autohide
+    "nobar",        -- 6 -- No bar
 }
 local bar_theme = bar_themes[4]
 
@@ -387,6 +388,7 @@ awful.rules.rules = {
                 "leagueclientux.exe",
                 "Devtools", -- Firefox devtools
                 "mupdf",
+                "ImageMagick",
             },
             class = {
                 "Gpick",
@@ -396,6 +398,7 @@ awful.rules.rules = {
                 "fst",
                 "Nvidia-settings",
                 "mupdf",
+                "ImageMagick",
             },
             name = {
                 "Event Tester",  -- xev
@@ -493,6 +496,8 @@ awful.rules.rules = {
                 "^editor$",
                 "markdown_input",
                 "mupdf",
+                "kitty",
+                "spotify"
             },
             class = {
                 "qutebrowser",
@@ -509,6 +514,8 @@ awful.rules.rules = {
                 "markdown_input",
                 -- "Thunderbird",
                 "mupdf",
+                "kitty",
+                "spotify",
             },
             type = {
               "splash"

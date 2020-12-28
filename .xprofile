@@ -1,6 +1,7 @@
 #!/bin/sh
 [[ -f ~/.config/zsh/.zshenv ]] && source ~/.config/zsh/.zshenv
 
+sh ~/.screenlayout/doublescreen.sh
 picom &
 xrdb -merge ~/.cache/wal/colors.Xresources
 xrdb -load ~/.Xresources

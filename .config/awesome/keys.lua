@@ -133,6 +133,20 @@ keys.globalkeys = gears.table.join(
         end,
         {description = "focus right", group = "client"}),
 
+    -- Change screen
+    awful.key({ superkey }, "o",
+        function()
+            awful.screen.focus_relative(1)
+        end,
+        {description = "change screen", group = "client"}),
+
+    -- Move to screen
+    awful.key({ superkey, shiftkey }, "o",
+        function()
+            awful.client.movetoscreen()
+        end,
+        {description = "move to screen", group = "client"}),
+
     -- Window switcher
     awful.key({ superkey }, "Tab",
         function ()

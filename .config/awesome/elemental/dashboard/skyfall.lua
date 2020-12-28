@@ -107,10 +107,10 @@ user_text.align = "center"
 user_text.valign = "center"
 
 local host_text = wibox.widget.textbox()
-awful.spawn.easy_async_with_shell("hostname", function(out)
+awful.spawn.easy_async_with_shell("host", function(out)
     -- Remove trailing whitespaces
     out = out:gsub('^%s*(.-)%s*$', '%1')
-    host_text.markup = helpers.colorize_text("@"..out, x.color8)
+    host_text.markup = helpers.colorize_text("@archkamui"..out, x.color8)
 end)
 -- host_text.markup = "<span foreground='" .. x.color8 .."'>" .. minutes.text .. "</span>"
 host_text.font = "raleway italic 18"

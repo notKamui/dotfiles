@@ -135,12 +135,24 @@ cont(){
   fi
 }
 
+pipupd(){
+    echo 'pip : checking updates'
+
+    check=`pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1`
+    count=`echo $check | wc | awk '{print $2}'`
+
+    if [ $count -gt 0 ]; then
+        echo $check | xargs -n1 python -m pip install -U
+    else
+        echo 'No updates available'
+    fi
+}
+
 alias h="history"
 alias p="pwd -P"
 alias s="sudo -s"
 alias hc='herbstclient'
 alias ff='firefox'
-alias c="while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &; clear"
 
 alias netprocs="lsof -P -i -n"
 
@@ -154,12 +166,7 @@ alias xrc="nvim ~/.wally/Xresources-clean"
 alias zshrc="nvim ~/.zshrc"
 # alias i3config="nvim ~/.config/i3/config"
 # alias polyconf="nvim ~/.config/polybar/config"
-alias dunstrc="nvim ~/.config/dunst/dunstrc"
-alias tint2rc="nvim ~/.config/tint2/tint2rc"
 alias userChrome.css="nvim ~/thm/Firefox/userChrome.css"
-alias stconf="nvim ~/pro/xst/src/config.h"
-alias playlists="nvim ~/.config/mpv/tubify_playlists"
-alias airlinevim="nvim ~/.config/nvim/plugged/vim-airline/autoload/airline/themes/dark.vim"
 alias rc.lua="nvim ~/.config/awesome/rc.lua"
 
 # nvidia optimus -> prime select
@@ -169,13 +176,11 @@ alias intel="sudo prime-select intel"
 alias gameoff="sudo cpufreq-set -g powersave"
 alias gameon="sudo cpufreq-set -g performance"
 
-# translate-shell: brief
-alias t='trans -brief'
-
 # other
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
+alias icat="kitty +kitten icat"
 alias ls="ls --color=auto -a"
 alias lart="ls --color=auto -lart"
 alias rm="rm -f"
@@ -188,4 +193,6 @@ alias p10kupd="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias upduni='cd ~/Documents/Uni && git add -A && git commit -a -m "Updated" && git push'
-alias fullupd='yay; upduni; cd; rustup update; yarn global upgrade --latest; sudo pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | sudo xargs -n1 pip install -U --ignore-installed'
+alias fullupd='yay; upduni; cd; rustup update; yarn global upgrade --latest; pipupgrade'
+
+eval $(thefuck --alias)
