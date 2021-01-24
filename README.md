@@ -1,5 +1,9 @@
 # My .dotfiles
 
+![aoi](Pictures/ProfilePictures/Aoi.jpg)
+
+## Summary
+
 * [Introduction](#Introduction)
 * [Gallery](#Gallery)
 * [Dependencies](#Dependencies)
