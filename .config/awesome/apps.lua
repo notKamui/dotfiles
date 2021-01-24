@@ -133,10 +133,10 @@ local screenshot_notification_app_name = "screenshot"
 function apps.screenshot(action, delay)
     -- Read-only actions
     if action == "browse" then
-        awful.spawn.with_shell("cd "..user.dirs.screenshots.." && sxiv $(ls -t)")
+        awful.spawn.with_shell("cd ".."~/Pictures/Screenshots".." && sxiv $(ls -t)")
         return
     elseif action == "gimp" then
-        awful.spawn.with_shell("cd "..user.dirs.screenshots.." && gimp $(ls -t | head -n1)")
+        awful.spawn.with_shell("cd ".."~/Pictures/Screenshots".." && gimp $(ls -t | head -n1)")
         naughty.notification({ message = "Opening last screenshot with GIMP", icon = icon, app_name = screenshot_notification_app_name})
         return
     end
@@ -144,7 +144,7 @@ function apps.screenshot(action, delay)
     -- Screenshot capturing actions
     local cmd
     local timestamp = os.date("%Y.%m.%d-%H.%M.%S")
-    local filename = user.dirs.screenshots.."/"..timestamp..".screenshot.png"
+    local filename = "~/Pictures/Screenshots".."/"..timestamp..".screenshot.png"
     local maim_args = "-u -b 3 -m 5"
     local icon = icons.image.screenshot
 
@@ -161,7 +161,7 @@ function apps.screenshot(action, delay)
     local screenshot_edit = naughty.action { name = "Edit" }
     local screenshot_delete = naughty.action { name = "Delete" }
     screenshot_open:connect_signal('invoked', function()
-        awful.spawn.with_shell("cd "..user.dirs.screenshots.." && sxiv $(ls -t)")
+        awful.spawn.with_shell("cd ".."~/Pictures/Screenshots".." && sxiv $(ls -t)")
     end)
     screenshot_copy:connect_signal('invoked', function()
         awful.spawn.with_shell("xclip -selection clipboard -t image/png "..filename.." &>/dev/null")
