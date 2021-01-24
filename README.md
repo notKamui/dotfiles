@@ -18,7 +18,11 @@ with added functionalities to my convenience)
 
 ## Gallery
 
-soon<sup>tm</sup>
+![desktop](.assets/amarena_custom_core.png)
+
+![term](.assets/terminal_aesthetic.png)
+
+![spotify](.assets/custom_spotify.png)
 
 ## Dependencies
 
