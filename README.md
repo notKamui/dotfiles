@@ -4,10 +4,10 @@
 
 ## Summary
 
-* [Introduction](#Introduction)
-* [Gallery](#Gallery)
-* [Dependencies](#Dependencies)
-* [Installation](#Installation)
+*   [Introduction](#Introduction)
+*   [Gallery](#Gallery)
+*   [Dependencies](#Dependencies)
+*   [Installation](#Installation)
 
 ## Introduction
 
