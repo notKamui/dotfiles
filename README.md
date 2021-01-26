@@ -1,5 +1,7 @@
 # My .dotfiles
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/cead1c1ed7ef4e38b7decf452e2b737a)](https://www.codacy.com/gh/notKamui/dotfiles/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=notKamui/dotfiles&amp;utm_campaign=Badge_Grade)
+
 ![aoi](Pictures/ProfilePictures/Aoi.jpg)
 
 ## Summary

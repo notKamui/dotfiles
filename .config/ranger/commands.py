@@ -15,9 +15,11 @@ from ranger.api.commands import Command
 class mkcd(Command):
 
     """
+
     :mkcd <dirname>
 
     Creates a directory with the name <dirname> and enters it.
+
     """
 
     def execute(self):

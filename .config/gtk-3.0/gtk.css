@@ -1,19 +1,21 @@
 /* Termite configuration */
-vteterminal,
+Vte-Terminal,
 vte-terminal {
   /* padding: 30px; */
   padding: 18px;
 }
 
 /* Textboxes */
-gtkentry {
+Gtk-Entry {
   padding: 6px;
   border-width: 4px;
   border-style: solid;
   border-radius: 20px;
   border-color: #dee6e7;
+
   /* Disable shadow */
-  box-shadow: 0px;
+  box-shadow: 0;
+
   /* If font is unset, the current system font will be used. */
   font-family: monospace;
   font-size: 9pt;
