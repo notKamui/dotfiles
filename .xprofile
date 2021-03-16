@@ -8,5 +8,5 @@ xrdb -load ~/.Xresources
 setxkbmap fr
 nm-applet &
 jetbrains-toolbox &
-pasystray &
+flameshot
 

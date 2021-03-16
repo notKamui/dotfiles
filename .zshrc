@@ -190,6 +190,7 @@ alias ls="ls --color=auto -a"
 alias lart="ls --color=auto -lart"
 alias rm="rm -f"
 alias yeet="rm -rf"
+alias ocaml="rlwrap ocaml"
 # alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -198,6 +199,10 @@ alias p10kupd="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias upduni='cd ~/Documents/Uni && git add -A && git commit -a -m "Updated" && git push'
-alias fullupd='yay; upduni; cd; rustup update; yarn global upgrade --latest; pipupd'
+alias fullupd='paru; upduni; cd; rustup update; sudo npm update -g; yarn global upgrade --latest; pipupd'
 
 eval $(thefuck --alias)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

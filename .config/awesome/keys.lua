@@ -89,6 +89,13 @@ keys.globalkeys = gears.table.join(
         hotkeys_popup.show_help,
         {description = "show help", group = "awesome"}),
 
+    -- Restore sound
+    awful.key({ superkey }, "p",
+        function()
+            awful.spawn.with_shell("sudo alsactl restore")
+        end,
+        {description = "restores sound volumes", group = "client"}),
+
     -- Focus client by direction (hjkl keys)
     awful.key({ superkey }, "j",
         function()
@@ -223,7 +230,7 @@ keys.globalkeys = gears.table.join(
     --{description = "focus the next screen", group = "screen"}),
     --awful.key({ superkey, ctrlkey }, "k", function () awful.screen.focus_relative(-1) end,
     --{description = "focus the previous screen", group = "screen"}),
-    
+
     -- Urgent or Undo:
     -- Jump to urgent client or (if there is no such client) go back
     -- to the last tag
@@ -277,45 +284,45 @@ keys.globalkeys = gears.table.join(
         {description = "quit awesome", group = "awesome"}),
 
     -- Number of master clients
-    awful.key({ superkey, altkey }, "h",   
-        function () 
-            awful.tag.incnmaster( 1, nil, true) 
+    awful.key({ superkey, altkey }, "h",
+        function ()
+            awful.tag.incnmaster( 1, nil, true)
         end,
         {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ superkey, altkey }, "l",   
-        function () 
-            awful.tag.incnmaster(-1, nil, true) 
+    awful.key({ superkey, altkey }, "l",
+        function ()
+            awful.tag.incnmaster(-1, nil, true)
         end,
         {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ superkey, altkey }, "Left",   
-        function () 
-            awful.tag.incnmaster( 1, nil, true) 
+    awful.key({ superkey, altkey }, "Left",
+        function ()
+            awful.tag.incnmaster( 1, nil, true)
         end,
         {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ superkey, altkey }, "Right",   
-        function () 
-            awful.tag.incnmaster(-1, nil, true) 
+    awful.key({ superkey, altkey }, "Right",
+        function ()
+            awful.tag.incnmaster(-1, nil, true)
         end,
         {description = "decrease the number of master clients", group = "layout"}),
 
     -- Number of columns
-    awful.key({ superkey, altkey }, "k",   
-        function () 
+    awful.key({ superkey, altkey }, "k",
+        function ()
             awful.tag.incncol( 1, nil, true)
         end,
         {description = "increase the number of columns", group = "layout"}),
-    awful.key({ superkey, altkey }, "j",   
-        function () 
+    awful.key({ superkey, altkey }, "j",
+        function ()
             awful.tag.incncol( -1, nil, true)
         end,
         {description = "decrease the number of columns", group = "layout"}),
-    awful.key({ superkey, altkey }, "Up",   
-        function () 
+    awful.key({ superkey, altkey }, "Up",
+        function ()
             awful.tag.incncol( 1, nil, true)
         end,
         {description = "increase the number of columns", group = "layout"}),
-    awful.key({ superkey, altkey }, "Down",   
-        function () 
+    awful.key({ superkey, altkey }, "Down",
+        function ()
             awful.tag.incncol( -1, nil, true)
         end,
         {description = "decrease the number of columns", group = "layout"}),
@@ -442,6 +449,8 @@ keys.globalkeys = gears.table.join(
         {description = "toggle microphone overlay", group = "volume"}),
 
     -- Screenshots
+    awful.key( { superkey, altkey }, "f", function() awful.spawn.with_shell("flameshot gui") end,
+        {description = "take screenshot with flameshot", group = "screenshots"}),
     awful.key( { }, "Print", function() apps.screenshot("full") end,
         {description = "take full screenshot", group = "screenshots"}),
     awful.key( { superkey, shiftkey }, "c", function() apps.screenshot("selection") end,
@@ -576,10 +585,7 @@ keys.globalkeys = gears.table.join(
         {description = "youtube search and play", group = "launcher"}),
     -- Spawn file manager
     awful.key({ superkey, shiftkey }, "f", apps.file_manager,
-        {description = "file manager", group = "launcher"}),
-    -- Process monitor
-    awful.key({ superkey }, "p", apps.process_monitor,
-        {description = "process monitor", group = "launcher"})
+        {description = "file manager", group = "launcher"})
 )
 
 keys.clientkeys = gears.table.join(
@@ -609,7 +615,7 @@ keys.clientkeys = gears.table.join(
         helpers.move_client_dwim(c, "right")
     end),
 
-    -- Single tap: Center client 
+    -- Single tap: Center client
     -- Double tap: Center client + Floating + Resize
     awful.key({ superkey }, "c", function (c)
         awful.placement.centered(c, {honor_workarea = true, honor_padding = true})
