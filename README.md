@@ -1,7 +1,5 @@
 # My .dotfiles
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/cead1c1ed7ef4e38b7decf452e2b737a)](https://www.codacy.com/gh/notKamui/dotfiles/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=notKamui/dotfiles&amp;utm_campaign=Badge_Grade)
-
 ![aoi](Pictures/ProfilePictures/Aoi.jpg)
 
 ## Summary
@@ -17,14 +15,9 @@ Dotfiles are usually hidden config files that are easily transportable and
 sharable between installations of *nix operating systems.
 
 Mine are a collection of little things everywhere that make up a fully fledged
-and development oriented AwesomeWM setup.
-
-(Heavily inspired by [elenapan's awesome setup](https://github.com/elenapan/dotfiles),
-with added functionalities to my convenience)
+and development oriented setup.
 
 ## Gallery
-
-![desktop](.assets/amarena_custom_core.png)
 
 ![term](.assets/terminal_aesthetic.png)
 
